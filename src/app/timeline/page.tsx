@@ -4,9 +4,9 @@
 import React, { useState, useEffect, useRef } from "react";
 import { getAllMemories, postMemory } from "@/db/memoryQueries";
 
-import Header from "../../components/header/header";
-import Footer from "../../components/footer/footer";
-import Navigation from "../../components/navigation/navigation";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
+import Navigation from "../components/navigation/navigation";
 
 import Timeline from "@mui/lab/Timeline";
 import TimelineItem from "@mui/lab/TimelineItem";

@@ -1,8 +1,8 @@
 import styles from "../page.module.css";
-import Header from "@/components/header/header";
-import Footer from "@/components/footer/footer";
-import Navigation from "@/components/navigation/navigation";
-import MemoriesContainer from "@/components/memoriesContainer/memoriesContainer";
+import Header from "@/app/components/header/header";
+import Footer from "@/app/components/footer/footer";
+import Navigation from "@/app/components/navigation/navigation";
+import MemoriesContainer from "@/app/components/memoriesContainer/memoriesContainer";
 
 export default function Home() {
   return (

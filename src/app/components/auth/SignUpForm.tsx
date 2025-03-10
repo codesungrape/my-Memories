@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { supabase } from "../../lib/supabaseClient";
+import { supabase } from "../../../lib/supabaseClient";
 //  import Link from "next/link"; //allows navigation between pages for login
-import { GoogleSignIn } from "../../components/auth/GoogleSignIn";
+import { GoogleSignIn } from "./GoogleSignIn";
 import styles from "./SignUpForm.module.css";
 
 // create TS interface obj for what the object function expects to take in

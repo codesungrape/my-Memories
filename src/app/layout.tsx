@@ -1,6 +1,6 @@
 import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
-import DatabaseInitializer from "@/components/DatabaseInitializer";
+import DatabaseInitializer from "@/app/components/DatabaseInitializer";
 
 // ... rest of your code remains unchanged
 
