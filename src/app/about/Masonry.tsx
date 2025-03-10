@@ -10,7 +10,7 @@ import * as React from "react";
 import Box from "@mui/material/Box";
 import Masonry from "@mui/lab/Masonry";
 // Import CSS module
-import styles from "./Memory.module.css";
+import styles from "./Masonry.module.css";
 
 // Define TypeScript interface for our content items
 interface ContentItem {
@@ -25,9 +25,9 @@ export const mixedContentItems: ContentItem[] = [
   {
     type: "image",
     title: "Family Reunion",
-    content: "/api/placeholder/800/600",
+    content: "/assets/family_reunion.webp",
     description:
-      "Our annual family gathering at Lake Michigan last summer - all 23 of us!",
+      "Our annual family gathering at Lake Michigan last summer - all 58 of us made it!",
   },
   {
     type: "text",
@@ -52,7 +52,7 @@ export const mixedContentItems: ContentItem[] = [
   {
     type: "image",
     title: "Grandkids at the Beach",
-    content: "/api/placeholder/600/400",
+    content: "/assets/grandkidsAtTheBeach.jpg",
     description:
       "Emma, Liam, and the twins building sandcastles during our Florida vacation",
   },
@@ -65,14 +65,15 @@ export const mixedContentItems: ContentItem[] = [
   {
     type: "audio",
     title: "Our Wedding Song",
-    content: "https://example.com/music.mp3",
+    content:
+      "https://soundcloud.com/elvissonymusic/cant-help-falling-in-953786220",
     description:
       '"Can\'t Help Falling in Love" - Robert and I danced to this at our wedding in 1979',
   },
   {
     type: "image",
     title: "My Garden",
-    content: "/api/placeholder/500/500",
+    content: "/assets/flower-garden-walking-path.webp",
     description:
       "My prize-winning roses and the vegetable garden that keeps the whole family in fresh tomatoes all summer",
   },
@@ -106,9 +107,9 @@ export const mixedContentItems: ContentItem[] = [
   {
     type: "image",
     title: "45th Anniversary",
-    content: "/api/placeholder/400/700",
+    content: "/assets/anniversary.jpg",
     description:
-      "Robert and I on our Alaskan cruise celebrating 45 wonderful years together",
+      "Robert and I on our Alaskan cruise celebrating 45 wonderful years together.",
   },
   {
     type: "audio",
@@ -153,17 +154,37 @@ export default function AboutTSMasonry() {
             </div>
           </div>
         );
-
       case "audio":
+        // Check if it's a SoundCloud URL
+        const isSoundCloud = item.content.includes("soundcloud.com");
+
+        // Create proper SoundCloud embed URL
+        const soundcloudEmbedUrl = isSoundCloud
+          ? `https://w.soundcloud.com/player/?url=${encodeURIComponent(item.content)}&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true`
+          : item.content;
+
         return (
           <div className={`${styles.masonryItem} ${styles.audioItem}`}>
             <div className={styles.itemContent}>
               <h3 className={styles.itemTitle}>{item.title}</h3>
               <p className={styles.itemText}>{item.description}</p>
-              <audio controls className={styles.mediaAudio}>
-                <source src={item.content} type="audio/mpeg" />
-                Your browser does not support the audio element.
-              </audio>
+
+              {isSoundCloud ? (
+                <iframe
+                  width="100%"
+                  height="166"
+                  scrolling="no"
+                  frameBorder="no"
+                  allow="autoplay"
+                  src={soundcloudEmbedUrl}
+                  className={styles.soundcloudFrame}
+                ></iframe>
+              ) : (
+                <audio controls className={styles.mediaAudio}>
+                  <source src={item.content} type="audio/mpeg" />
+                  Your browser does not support the audio element.
+                </audio>
+              )}
             </div>
           </div>
         );

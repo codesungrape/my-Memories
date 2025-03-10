@@ -3,11 +3,11 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import styles from "./page.module.css";
-import Header from "@/components/header/header";
+import Header from "@/app/components/header/header";
 
-import Footer from "@/components/footer/footer";
-import AuthSignUpForm from "@/components/auth/SignUpForm";
-import AuthSignInForm from "@/components/auth/SignInForm";
+import Footer from "@/app/components/footer/footer";
+import AuthSignUpForm from "@/app/components/auth/SignUpForm";
+import AuthSignInForm from "@/app/components/auth/SignInForm";
 
 export default function Home() {
   // State to track which form to display

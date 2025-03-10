@@ -4,7 +4,7 @@ import { Pinecone } from "@pinecone-database/pinecone";
 import { OpenAIEmbeddings } from "@langchain/openai";
 import { PineconeStore } from "@langchain/pinecone";
 import { OpenAI } from "openai";
-import { mixedContentItems } from "@/app/about/Memory";
+import { mixedContentItems } from "@/app/about/Masonry";
 
 // type object
 interface ContentItem {

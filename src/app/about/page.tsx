@@ -1,9 +1,9 @@
 "use client";
 
-import Header from "../../components/header/header";
-import Footer from "../../components/footer/footer";
-import Navigation from "../../components/navigation/navigation";
-import BasicMasonry from "./Memory";
+import Header from "../components/header/header";
+import Footer from "../components/footer/footer";
+import Navigation from "../components/navigation/navigation";
+import BasicMasonry from "./Masonry";
 
 export default function About() {
   return (
