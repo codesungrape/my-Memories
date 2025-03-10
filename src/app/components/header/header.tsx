@@ -15,10 +15,10 @@ export default function Header() {
       <div className={styles.logoContainer}>
         <Link href="/home">
           <Image
-            src="/logo.jpg"
+            src="/assets/logo.jpg"
             alt="MyMemories Logo"
-            width={160}
-            height={120}
+            width={150}
+            height={110}
             className={styles.logo}
             priority
           />
