@@ -11,7 +11,7 @@ export default function Home() {
         <Header></Header>
         <Navigation></Navigation>
         <div className={styles.content}>
-          <h2>Welcome to MyMemories</h2>
+          <h2>Welcome to MyMemories Martha!</h2>
           <p>Store and share your precious memories.</p>
         </div>
         <main>
